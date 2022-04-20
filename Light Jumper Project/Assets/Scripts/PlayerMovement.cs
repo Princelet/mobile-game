@@ -32,25 +32,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void BUp()
     {
-        Debug.Log("Bup :D");
+        /* Debug.Log("Bup :D"); */
         Vector2 bupVal = new Vector2(0, moveSpeed);
         physicsBody.velocity = bupVal;
     }
     public void BDown()
     {
-        Debug.Log("Bdown :(");
+        /* Debug.Log("Bdown :("); */
         Vector2 bdownVal = new Vector2(0, -moveSpeed);
         physicsBody.velocity = bdownVal;
     }
     public void BLeft()
     {
-        Debug.Log("Bleft :O");
+        /* Debug.Log("Bleft :O"); */
         Vector2 bleftVal = new Vector2(-moveSpeed, 0);
         physicsBody.velocity = bleftVal;
     }
     public void BRight()
     {
-        Debug.Log("Bright :)");
+        /* Debug.Log("Bright :)"); */
         Vector2 brightVal = new Vector2(moveSpeed, 0);
         physicsBody.velocity = brightVal;
     }
