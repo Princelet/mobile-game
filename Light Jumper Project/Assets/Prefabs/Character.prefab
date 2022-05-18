@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6612828746497441701}
   - component: {fileID: 6612828746497441700}
-  - component: {fileID: 6612828746497441698}
   - component: {fileID: 6612828746497441696}
   - component: {fileID: 6612828746497441699}
-  - component: {fileID: 6612828746497441694}
   - component: {fileID: 4595394163984104413}
+  - component: {fileID: 1190103309}
+  - component: {fileID: 1190103310}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -88,19 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6612828746497441698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6612828746497441703}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4970461a8c91d36418e729a4d4f96297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  message: Default Message The Second
 --- !u!50 &6612828746497441696
 Rigidbody2D:
   serializedVersion: 4
@@ -119,7 +106,7 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 1
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6612828746497441699
@@ -135,78 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
---- !u!60 &6612828746497441694
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6612828746497441703}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.071555175, y: -0.25994462}
-      - {x: -0.06808246, y: -0.27711126}
-      - {x: -0.065943755, y: -0.3007499}
-      - {x: -0.03074989, y: -0.29861093}
-      - {x: 0.029139424, y: -0.30063918}
-      - {x: -0.00011058524, y: -0.2578057}
-    - - {x: 0.102611944, y: -0.2599446}
-      - {x: 0.077564344, y: -0.26459512}
-      - {x: 0.08261195, y: -0.298611}
-      - {x: 0.1171112, y: -0.30288875}
-      - {x: 0.17971492, y: -0.29628605}
-      - {x: 0.13714339, y: -0.253143}
-    - - {x: 0.11204254, y: -0.1074804}
-      - {x: 0.14999999, y: -0.10299948}
-      - {x: 0.16971423, y: -0.12514225}
-      - {x: 0.2105716, y: -0.12771372}
-      - {x: 0.20314234, y: -0.106856935}
-      - {x: 0.15584153, y: -0.087360784}
-      - {x: 0.09094539, y: -0.07790614}
-      - {x: 0.057345532, y: -0.010603057}
-      - {x: 0.06182877, y: 0.016761528}
-      - {x: 0.09804963, y: 0.017001435}
-      - {x: 0.15074593, y: 0.041240443}
-      - {x: 0.15244213, y: 0.12781444}
-      - {x: 0.1825708, y: 0.2008587}
-      - {x: 0.109755725, y: 0.28123736}
-      - {x: 0.10881668, y: 0.21666402}
-      - {x: 0.10186134, y: 0.18370046}
-      - {x: 0.0651279, y: 0.20141442}
-      - {x: 0.024945507, y: 0.18128249}
-      - {x: 0.009163074, y: 0.22060257}
-      - {x: 0.006963283, y: 0.27540502}
-      - {x: -0.05189176, y: 0.20768863}
-      - {x: -0.027998865, y: 0.12485776}
-      - {x: -0.027834743, y: 0.042694405}
-      - {x: 0.04181066, y: 0.017908232}
-      - {x: 0.044154316, y: -0.0137706855}
-      - {x: 0.0028601233, y: -0.053713948}
-      - {x: -0.022775292, y: -0.10180458}
-      - {x: -0.09453768, y: -0.10553838}
-      - {x: -0.11942838, y: -0.16465122}
-      - {x: -0.05709567, y: -0.14317343}
-      - {x: -0.0068577267, y: -0.18914263}
-      - {x: 0.10914272, y: -0.186857}
-      - {x: 0.13788317, y: -0.16490762}
-      - {x: 0.099412315, y: -0.095706105}
-      - {x: 0.08746078, y: -0.08068189}
 --- !u!114 &4595394163984104413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,3 +136,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreDisplay: {fileID: 0}
   lanterns: 0
+--- !u!61 &1190103309
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6612828746497441703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.054893225, y: -0.017840326}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.22830027, y: 0.565894}
+  m_EdgeRadius: 0
+--- !u!114 &1190103310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6612828746497441703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de70251f33b76034ab530460b266abf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
