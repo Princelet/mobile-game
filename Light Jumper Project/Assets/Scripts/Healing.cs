@@ -8,7 +8,7 @@ public class Healing : MonoBehaviour
     // How much damage something should deal
     public int healAmount;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         // Get health component from the object
         PlayerHealth healthScript = collision.gameObject.GetComponent<PlayerHealth>();

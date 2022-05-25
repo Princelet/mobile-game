@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Text HealthDisplayT;
 
     public int startingHealth;
-    private int currentHealth;
+    private static int currentHealth;
 
     public float invincibleTime;
     private float lastHitTime = 0;

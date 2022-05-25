@@ -6,16 +6,35 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 3.0f;
+    public float jumpSpeed = 10.0f;
+    private bool onGround;
+
+    public LayerMask groundLayer;
+
+    private float attackTime = 5;
+    private float lastAttackTime = 0;
 
     private Rigidbody2D physicsBody = null;
-
+    private Animator animator = null;
 
     // Start is called before the first frame update
     void Start()
     {
         physicsBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+    }
 
-        /* physicsBody.velocity = new Vector2(2, 0); */
+    private void FixedUpdate()
+    {
+        onGround = false;
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Checks if the colliding object's layer is the ground layer mask
+        if (groundLayer == (groundLayer | (1 << collision.gameObject.layer)))
+        {
+            onGround = true;
+        }
     }
 
     // Update is called once per frame
@@ -27,31 +46,54 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 newVal = new Vector2 (horiVal, vertVal);
         newVal = newVal * moveSpeed;
-        /* physicsBody.velocity = newVal; */
+
+        Vector2 currentVelocity = physicsBody.velocity;
+        animator.SetFloat("Vertical", currentVelocity.y);
+        animator.SetFloat("Horizontal", currentVelocity.x);
+
+        // Condition: Has it been long enough since last attack?
+        if (Time.time >= lastAttackTime + 1)
+        {
+            // Since it has, stop attacking animation
+            animator.SetBool("Attacking", false);
+        }
+
+        animator.SetBool("InAir", !onGround);
     }
 
     public void BUp()
     {
-        /* Debug.Log("Bup :D"); */
-        Vector2 bupVal = new Vector2(0, moveSpeed);
-        physicsBody.velocity = bupVal;
-    }
-    public void BDown()
-    {
-        /* Debug.Log("Bdown :("); */
-        Vector2 bdownVal = new Vector2(0, -moveSpeed);
-        physicsBody.velocity = bdownVal;
+        if (onGround)
+        {
+            float horiVal = Input.GetAxis("Horizontal");
+            Vector2 bupVal = new Vector2(horiVal, jumpSpeed);
+            physicsBody.velocity = bupVal;
+        }
     }
     public void BLeft()
     {
-        /* Debug.Log("Bleft :O"); */
-        Vector2 bleftVal = new Vector2(-moveSpeed, 0);
+        float vertVal = Input.GetAxis("Vertical");
+        Vector2 bleftVal = new Vector2(-moveSpeed, vertVal);
         physicsBody.velocity = bleftVal;
     }
     public void BRight()
     {
-        /* Debug.Log("Bright :)"); */
-        Vector2 brightVal = new Vector2(moveSpeed, 0);
+        float vertVal = Input.GetAxis("Vertical");
+        Vector2 brightVal = new Vector2(moveSpeed, vertVal);
         physicsBody.velocity = brightVal;
+    }
+    public void BFire()
+    {
+        Debug.Log("Fire!");
+
+        // Condition: Has it been long enough since last attack?
+        if (Time.time >= lastAttackTime + attackTime)
+        {
+            // Set the last attack time to now
+            lastAttackTime = Time.time;
+
+            // Since it has, start attacking animation
+            animator.SetBool("Attacking", true);
+        }
     }
 }
