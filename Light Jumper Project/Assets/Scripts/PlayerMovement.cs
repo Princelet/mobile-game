@@ -11,9 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask groundLayer;
 
-    private float attackTime = 5;
-    private float lastAttackTime = 0;
-
     private Rigidbody2D physicsBody = null;
     private Animator animator = null;
 
@@ -35,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             onGround = true;
         }
+
     }
 
     // Update is called once per frame
@@ -50,13 +48,6 @@ public class PlayerMovement : MonoBehaviour
         Vector2 currentVelocity = physicsBody.velocity;
         animator.SetFloat("Vertical", currentVelocity.y);
         animator.SetFloat("Horizontal", currentVelocity.x);
-
-        // Condition: Has it been long enough since last attack?
-        if (Time.time >= lastAttackTime + 1)
-        {
-            // Since it has, stop attacking animation
-            animator.SetBool("Attacking", false);
-        }
 
         animator.SetBool("InAir", !onGround);
     }
@@ -81,19 +72,5 @@ public class PlayerMovement : MonoBehaviour
         float vertVal = Input.GetAxis("Vertical");
         Vector2 brightVal = new Vector2(moveSpeed, vertVal);
         physicsBody.velocity = brightVal;
-    }
-    public void BFire()
-    {
-        Debug.Log("Fire!");
-
-        // Condition: Has it been long enough since last attack?
-        if (Time.time >= lastAttackTime + attackTime)
-        {
-            // Set the last attack time to now
-            lastAttackTime = Time.time;
-
-            // Since it has, start attacking animation
-            animator.SetBool("Attacking", true);
-        }
     }
 }

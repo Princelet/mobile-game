@@ -5,7 +5,13 @@ using UnityEngine;
 public class Lantern : MonoBehaviour
 {
     public int lanternVal = 1;
+    private Animator animator = null;
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        
+    }
     // Called when object overlaps trigger object
     // Our condition
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,8 +28,7 @@ public class Lantern : MonoBehaviour
             // We should add to the lantern value.
             scoreTotalScript.addLantern(lanternVal);
 
-
-            Destroy(gameObject); // Change sprite in final, destroy for now!
+            animator.SetBool("IsLit", true);
 
         }
     }
