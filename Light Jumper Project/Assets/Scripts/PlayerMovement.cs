@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    public Transform firePoint;
     public float moveSpeed = 3.0f;
     public float jumpSpeed = 10.0f;
     private bool onGround;
@@ -13,6 +14,11 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D physicsBody = null;
     private Animator animator = null;
+
+    public GameObject flamePrefab;
+    public float fireTimer;
+    private float lastFireTime = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -72,5 +78,17 @@ public class PlayerMovement : MonoBehaviour
         float vertVal = Input.GetAxis("Vertical");
         Vector2 brightVal = new Vector2(moveSpeed, vertVal);
         physicsBody.velocity = brightVal;
+    }
+    public void BFire()
+    {
+        // Condition: Has it been long enough since last fired?
+        if (Time.time >= lastFireTime + fireTimer)
+        {
+            // Set the last hit time to now
+            lastFireTime = Time.time;
+            fireTimer = 1;
+
+            Instantiate(flamePrefab, firePoint.position, firePoint.rotation);
+        }
     }
 }

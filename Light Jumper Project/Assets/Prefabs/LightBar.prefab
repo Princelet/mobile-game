@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &756164001362070451
+--- !u!1 &4992098442881818717
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 756164001362070450}
-  - component: {fileID: 756164001362070448}
-  - component: {fileID: 756164001362070449}
+  - component: {fileID: 7408392007031990891}
+  - component: {fileID: 4077268310216343783}
+  - component: {fileID: 8837866397490228520}
   m_Layer: 5
   m_Name: LightBar
   m_TagString: Untagged
@@ -18,18 +18,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &756164001362070450
+--- !u!224 &7408392007031990891
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756164001362070451}
+  m_GameObject: {fileID: 4992098442881818717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
-  - {fileID: 756164002717742179}
+  - {fileID: 4457127075241534091}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38,21 +38,21 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: -35}
   m_SizeDelta: {x: 65, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &756164001362070448
+--- !u!222 &4077268310216343783
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756164001362070451}
+  m_GameObject: {fileID: 4992098442881818717}
   m_CullTransparentMesh: 1
---- !u!114 &756164001362070449
+--- !u!114 &8837866397490228520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756164001362070451}
+  m_GameObject: {fileID: 4992098442881818717}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &756164002717742180
+--- !u!1 &5200665434121054322
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,9 +84,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 756164002717742179}
-  - component: {fileID: 756164002717742177}
-  - component: {fileID: 756164002717742178}
+  - component: {fileID: 4457127075241534091}
+  - component: {fileID: 7874230360421201065}
+  - component: {fileID: 7408392006211098043}
   m_Layer: 5
   m_Name: InnerLightBar
   m_TagString: Untagged
@@ -94,18 +94,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &756164002717742179
+--- !u!224 &4457127075241534091
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756164002717742180}
+  m_GameObject: {fileID: 5200665434121054322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 756164001362070450}
+  m_Father: {fileID: 7408392007031990891}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -113,21 +113,21 @@ RectTransform:
   m_AnchoredPosition: {x: 7.1, y: -0.0000013933}
   m_SizeDelta: {x: 41, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &756164002717742177
+--- !u!222 &7874230360421201065
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756164002717742180}
+  m_GameObject: {fileID: 5200665434121054322}
   m_CullTransparentMesh: 1
---- !u!114 &756164002717742178
+--- !u!114 &7408392006211098043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 756164002717742180}
+  m_GameObject: {fileID: 5200665434121054322}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}

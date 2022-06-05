@@ -10,26 +10,25 @@ public class Lantern : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        
     }
+
+
     // Called when object overlaps trigger object
     // Our condition
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Interaction with player only
-        // Will be player if they have ScoreTotal script
+        // Interaction with flame only
+        // Will be flame if it has FlameAttack script and ScoreTotal script
 
+        FlameAttack flameAttackScript = collision.GetComponent<FlameAttack>();
         ScoreTotal scoreTotalScript = collision.GetComponent<ScoreTotal>();
 
-        // Check if it has variable
-        if (scoreTotalScript != null)
+        // Check if it has variables
+        if (flameAttackScript && scoreTotalScript)
         {
-            // The object has the script, and thus is the player
-            // We should add to the lantern value.
             scoreTotalScript.addLantern(lanternVal);
 
             animator.SetBool("IsLit", true);
-
         }
     }
 }

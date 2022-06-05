@@ -105,7 +105,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         // Initialising health display
-        HealthDisplayT.text = currentHealth.ToString();
         healthBarImage.fillAmount = currentHealth;
     }
 }

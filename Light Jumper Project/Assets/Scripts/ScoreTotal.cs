@@ -15,15 +15,17 @@ public class ScoreTotal : MonoBehaviour
 
         ScoreDisplay.text = scoreVal.ToString();
     }
-
     public void addLantern(int toAddLant)
     {
-       lanterns += toAddLant;
+        lanterns += toAddLant;
     }
-
     // Start is called before the first frame update
     void Start()
     {
-        ScoreDisplay.text = scoreVal.ToString();
+        PlayerHealth playerCheck = gameObject.GetComponent<PlayerHealth>();
+        if (playerCheck != null)
+        {
+            ScoreDisplay.text = scoreVal.ToString();
+        }
     }
 }
