@@ -1,32 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lantern : MonoBehaviour
 {
-    public int lanternVal = 1;
+    public Text LanternDisplay;
     private Animator animator = null;
+    private bool isLit;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        LanternDisplay.text = "0";
     }
-
 
     // Called when object overlaps trigger object
     // Our condition
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Interaction with flame only
-        // Will be flame if it has FlameAttack script and ScoreTotal script
+        // Will be flame if it has FlameAttack script
 
-        FlameAttack flameAttackScript = collision.GetComponent<FlameAttack>();
-        ScoreTotal scoreTotalScript = collision.GetComponent<ScoreTotal>();
+        FlameAttack flameAttackScript = collision.gameObject.GetComponent<FlameAttack>();
+
+        isLit = animator.GetBool("IsLit");
 
         // Check if it has variables
-        if (flameAttackScript && scoreTotalScript)
+        if (collision.CompareTag("Flame"))
         {
-            scoreTotalScript.addLantern(lanternVal);
+            LanternDisplay.text = (int.Parse(LanternDisplay.text) + 1).ToString();
 
             animator.SetBool("IsLit", true);
         }

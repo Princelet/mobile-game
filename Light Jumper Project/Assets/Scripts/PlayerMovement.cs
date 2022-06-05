@@ -87,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
             // Set the last hit time to now
             lastFireTime = Time.time;
             fireTimer = 1;
-
             Instantiate(flamePrefab, firePoint.position, firePoint.rotation);
         }
     }

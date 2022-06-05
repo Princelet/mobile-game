@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 969026983571731788}
   - component: {fileID: 535180228271474678}
   - component: {fileID: 817459216}
-  - component: {fileID: 1160551053836410024}
+  - component: {fileID: 1822348249}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Flame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,17 +114,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a5681e8076da8499f42db557d11e4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1160551053836410024
-MonoBehaviour:
+--- !u!50 &1822348249
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969026983571731795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5d9a0974220695408dad3438e1de3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreDisplay: {fileID: 0}
-  lanterns: 0
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

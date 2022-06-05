@@ -7,7 +7,7 @@ public class ScoreTotal : MonoBehaviour
 {
     public Text ScoreDisplay;
     private static int scoreVal = 0;
-    public int lanterns = 0;
+    /* public int lanterns = 0; */
 
     public void addScore(int toAdd)
     {
@@ -15,10 +15,14 @@ public class ScoreTotal : MonoBehaviour
 
         ScoreDisplay.text = scoreVal.ToString();
     }
+
+    /*
     public void addLantern(int toAddLant)
     {
         lanterns += toAddLant;
     }
+    */
+
     // Start is called before the first frame update
     void Start()
     {
