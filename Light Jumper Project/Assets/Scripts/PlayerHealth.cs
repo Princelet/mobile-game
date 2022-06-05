@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public Text HealthDisplayT;
+    public Image healthBarImage;
 
-    public int startingHealth;
-    private static int currentHealth;
+    public float startingHealth;
+    private static float currentHealth;
     private bool healing;
 
     public float invincibleTimer;
@@ -70,8 +71,8 @@ public class PlayerHealth : MonoBehaviour
         // Prevents going negative or too high!
         currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
 
-        // Display health on screen (Text for now, will become a bar in the future)
-        HealthDisplayT.text = currentHealth.ToString();
+        // Display health on screen
+        healthBarImage.fillAmount = Mathf.Clamp(currentHealth / startingHealth, 0, 1f);
 
         // Change health until...!
         if (currentHealth == 0)
@@ -105,5 +106,6 @@ public class PlayerHealth : MonoBehaviour
     {
         // Initialising health display
         HealthDisplayT.text = currentHealth.ToString();
+        healthBarImage.fillAmount = currentHealth;
     }
 }
