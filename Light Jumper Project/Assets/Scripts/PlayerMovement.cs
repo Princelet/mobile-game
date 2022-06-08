@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D physicsBody = null;
     private Animator animator = null;
+    private SpriteRenderer sprite = null;
 
     public GameObject flamePrefab;
     public float fireTimer;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         physicsBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -72,12 +74,22 @@ public class PlayerMovement : MonoBehaviour
         float vertVal = Input.GetAxis("Vertical");
         Vector2 bleftVal = new Vector2(-moveSpeed, vertVal);
         physicsBody.velocity = bleftVal;
+
+        if (firePoint.localPosition.x > 0)
+            firePoint.localPosition = new Vector3(-firePoint.localPosition.x, firePoint.localPosition.y, firePoint.localPosition.z);
+
+        sprite.flipX = false;
     }
     public void BRight()
     {
         float vertVal = Input.GetAxis("Vertical");
         Vector2 brightVal = new Vector2(moveSpeed, vertVal);
         physicsBody.velocity = brightVal;
+
+        if (firePoint.localPosition.x < 0)
+            firePoint.localPosition = new Vector3(-firePoint.localPosition.x, firePoint.localPosition.y, firePoint.localPosition.z);
+
+        sprite.flipX = true;
     }
     public void BFire()
     {

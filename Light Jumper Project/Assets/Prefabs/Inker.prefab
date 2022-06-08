@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1751472882026492872}
   - component: {fileID: 1751472882026492873}
   - component: {fileID: 1751472882026492870}
+  - component: {fileID: 102331474238764896}
   m_Layer: 0
   m_Name: Inker
   m_TagString: Untagged
@@ -170,3 +171,16 @@ PolygonCollider2D:
       - {x: 0.10595108, y: -0.26146472}
       - {x: 0.09317819, y: -0.20093502}
       - {x: 0.13975121, y: -0.15987562}
+--- !u!114 &102331474238764896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751472882026492871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cf5b4fc267a3a45b969e62957bf6cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardDamage: 30
