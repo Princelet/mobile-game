@@ -12,14 +12,22 @@ public class Healing : MonoBehaviour
     public bool isLit;
     void Start()
     {
-        animator = GetComponent<Animator>();
+        // Only check for lantern animation if object is lantern
+        if (gameObject.name.Contains("Lantern"))
+        {
+            animator = GetComponent<Animator>();
+            isLit = animator.GetBool("IsLit");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         // Get health component from the object
         PlayerHealth healthScript = collision.gameObject.GetComponent<PlayerHealth>();
-        isLit = animator.GetBool("IsLit");
+
+        // Only check for lantern animation if object is lantern
+        if (gameObject.name.Contains("Lantern"))
+            isLit = animator.GetBool("IsLit");
 
         // When player is on health object
         if (healthScript)

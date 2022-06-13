@@ -27,7 +27,7 @@ public class Lantern : MonoBehaviour
         isLit = animator.GetBool("IsLit");
 
         // Check if it has variables
-        if (flameAttackScript)
+        if (flameAttackScript && !isLit)
         {
             LanternDisplay.text = (int.Parse(LanternDisplay.text) + 1).ToString();
 
