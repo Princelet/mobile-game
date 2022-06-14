@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b976f3591d1304bb2e933397737ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 1
+  healAmount: 5
   isLit: 0
 --- !u!50 &20836326
 Rigidbody2D:

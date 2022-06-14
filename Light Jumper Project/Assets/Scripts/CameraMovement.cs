@@ -10,6 +10,6 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(trackingTarget.position.x, Mathf.Clamp(trackingTarget.position.y, 0, 10), -10);
+        transform.position = new Vector3(trackingTarget.position.x, Mathf.Clamp(trackingTarget.position.y, 0, 20), -10);
     }
 }

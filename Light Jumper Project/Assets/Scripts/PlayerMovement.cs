@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Transform firePoint;
-    public float moveSpeed = 3.0f;
+    public float moveSpeed = 5.0f;
     public float jumpSpeed = 10.0f;
     private bool onGround;
 
