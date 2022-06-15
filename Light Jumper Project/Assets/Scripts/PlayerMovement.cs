@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         float horiVal = Input.GetAxis("Horizontal");
         float vertVal = Input.GetAxis("Vertical");
 
-        Vector2 newVal = new Vector2 (horiVal, vertVal);
+        Vector2 newVal = new Vector2 (horiVal, vertVal - 2);
         newVal = newVal * moveSpeed;
 
         Vector2 currentVelocity = physicsBody.velocity;
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     public void BLeft()
     {
         float vertVal = Input.GetAxis("Vertical");
-        Vector2 bleftVal = new Vector2(-moveSpeed, vertVal);
+        Vector2 bleftVal = new Vector2(-moveSpeed, vertVal - 1);
         physicsBody.velocity = bleftVal;
 
         if (firePoint.localPosition.x > 0)
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     public void BRight()
     {
         float vertVal = Input.GetAxis("Vertical");
-        Vector2 brightVal = new Vector2(moveSpeed, vertVal);
+        Vector2 brightVal = new Vector2(moveSpeed, vertVal - 1);
         physicsBody.velocity = brightVal;
 
         if (firePoint.localPosition.x < 0)

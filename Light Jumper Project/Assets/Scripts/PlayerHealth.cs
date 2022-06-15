@@ -19,20 +19,10 @@ public class PlayerHealth : MonoBehaviour
     private float lastHealTime = 0;
     private float lastDrainTime = 0;
 
-    private float deathTime = 0;
-
     // Action: Kill Player. For now, delete game object.
     public void Kill()
     {
-        // Destroy object this script is connected to
-        Destroy(gameObject);
-        deathTime = Time.time;
-
-        // Condition: Has it been long enough since last drain
-        if (Time.time >= deathTime + 2)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LoseHealth(int loseAmount)

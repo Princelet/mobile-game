@@ -216,7 +216,7 @@ MonoBehaviour:
   healthBarImage: {fileID: 0}
   startingHealth: 100
   invincibleTimer: 2.5
-  drainTimer: 0.25
+  drainTimer: 0.3
 --- !u!95 &1827375354416669150
 Animator:
   serializedVersion: 3
