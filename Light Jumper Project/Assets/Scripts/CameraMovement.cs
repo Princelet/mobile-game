@@ -22,7 +22,7 @@ public class CameraMovement : MonoBehaviour
         }
         else if (levelName == "Level_6")
         {
-            transform.position = new Vector3(trackingTarget.position.x, Mathf.Clamp(trackingTarget.position.y, -0, 50), -10);
+            transform.position = new Vector3(trackingTarget.position.x, Mathf.Clamp(trackingTarget.position.y, -0, 60), -10);
         }
         else
         transform.position = new Vector3(trackingTarget.position.x, Mathf.Clamp(trackingTarget.position.y, 0, 25), -10);

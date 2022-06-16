@@ -9,10 +9,6 @@ public class TitleButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Level_1");
     }
-    public void ScoreButton()
-    {
-        /* SceneManager.LoadScene("HighScores"); */
-    }
     public void QuitButton()
     {
         Application.Quit();

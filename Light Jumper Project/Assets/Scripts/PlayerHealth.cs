@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Text HealthDisplayT;
     public Image healthBarImage;
 
     public float startingHealth;
@@ -19,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     private float lastHealTime = 0;
     private float lastDrainTime = 0;
 
-    // Action: Kill Player. For now, delete game object.
+    // Action: Kill Player.
     public void Kill()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -67,7 +66,7 @@ public class PlayerHealth : MonoBehaviour
         // Change health until...!
         if (currentHealth == 0)
         {
-            Kill();
+            Invoke("Kill", 1);
             currentHealth = startingHealth;
         }
     }
