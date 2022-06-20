@@ -27,6 +27,7 @@ public class BigCup : MonoBehaviour
 
     void Ending()
     {
+        // Load the end scene!
         SceneManager.LoadScene(targetScene);
     }
 }
